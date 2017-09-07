@@ -7,6 +7,11 @@ https://www.kaggle.com/c/titanic
 * Apache Spark 2.2
 * Tests locally and in Cloudera (CDH 5.12)
 
+## HOW-TO
+* sbt update
+* sbt "run local" - This runs the code on your local machine
+* sbt pacakge - to use the JAR by spark-submit 
+
 ## Thanks to
 
 * [Exploring spark.ml with the Titanic Kaggle competition](https://benfradet.github.io/blog/2015/12/16/Exploring-spark.ml-with-the-Titanic-Kaggle-competition)

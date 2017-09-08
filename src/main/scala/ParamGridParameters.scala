@@ -12,13 +12,13 @@ object ParamGridParameters {
   def loadConfigs(): ParamGridParameters = {
 
     val paramGridVariables = ParamGridParameters(
-      Array(20, 50),
-      Array(100, 150),
-      Array(10, 15),
-      Array(15, 20),
-      Array("entropy", "gini"),
-      10,
-      "auto"
+      Array(20, 50), //maxIter
+      Array(50), //numTrees
+      Array(10, 15), //maxBins
+      Array(15, 20), //maxDepth
+      Array("entropy", "gini"), //impurity
+      10, //numFolds
+      "auto" //featureSubsetStrategy
     )
     paramGridVariables
   }

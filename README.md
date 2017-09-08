@@ -7,10 +7,11 @@ https://www.kaggle.com/c/titanic
 * Apache Spark 2.2
 * Tests locally and in Cloudera (CDH 5.12)
 
-## HOW-TO
+## How-To
 * sbt update
 * sbt "run local" - This runs the code on your local machine
 * sbt pacakge - to use the JAR by spark-submit 
+* You can set ParamGrid values for cross validation inside ParamGridParameters.scala 
 
 ## Thanks to
 

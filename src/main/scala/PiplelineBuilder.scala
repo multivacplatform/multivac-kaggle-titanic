@@ -59,7 +59,7 @@ object PiplelineBuilder {
                   paramGridForest: Array[ParamMap],
                   dataDFFiltered: DataFrame
                 ): Unit ={
-    val Array(training, test) = dataDFFiltered.randomSplit(Array(0.7, 0.3), splitSeed)
+    val Array(training, test) = dataDFFiltered.randomSplit(Array(0.8, 0.2), splitSeed)
     training.cache
     test.cache
 

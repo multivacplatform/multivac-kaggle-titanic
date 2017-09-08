@@ -13,7 +13,7 @@ object ParamGridParameters {
 
     val paramGridVariables = ParamGridParameters(
       Array(20, 50), //maxIter
-      Array(50), //numTrees
+      Array(300), //numTrees
       Array(10, 15), //maxBins
       Array(15, 20), //maxDepth
       Array("entropy", "gini"), //impurity

@@ -4,7 +4,7 @@ import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructT
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.functions._
 
-object dataBuilder {
+object DataBuilder {
   def loadData(spark: SparkSession,
                trainFile: String,
                testFile: String

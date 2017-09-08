@@ -1,7 +1,7 @@
 import com.typesafe.config.ConfigFactory
 import org.apache.spark.sql.SparkSession
 
-object sessionBuilder {
+object SessionBuilder {
   def buildSession(env: String): SparkSession = {
 
     var sparkMaster = ConfigFactory.load().getString("spark.local.master.value")

@@ -21,7 +21,6 @@ resolvers ++= Seq(
   "Apache Repository" at "https://repository.apache.org/content/repositories/releases/",
   "Cloudera Repository" at "https://repository.cloudera.com/artifactory/cloudera-repos/",
   Resolver.sonatypeRepo("public")
-
 )
 
 libraryDependencies ++= Seq(

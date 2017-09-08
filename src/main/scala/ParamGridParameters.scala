@@ -1,4 +1,4 @@
-object ParamGridBuilder {
+object ParamGridParameters {
   case class ParamGridParameters(
                                   maxIterArray: Array[Int],
                                   numTreesArr: Array[Int],
@@ -9,7 +9,7 @@ object ParamGridBuilder {
                                   featureSubsetStrategy: String
                                 )
 
-  def loadConfigs(): ParamGridParameters ={
+  def loadConfigs(): ParamGridParameters = {
 
     val paramGridVariables = ParamGridParameters(
       Array(20, 50),

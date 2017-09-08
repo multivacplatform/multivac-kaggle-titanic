@@ -42,7 +42,7 @@ object RandomForestTree {
       predictDFCompleted
     )
 
-    val loadedConfigs = ParamGridBuilder.loadConfigs()
+    val loadedConfigs = ParamGridParameters.loadConfigs()
     //
     val (myPipeline, myParamGrid, myCVModel) = PiplelineBuilder.definePipeline(
       idxdLabelColName,

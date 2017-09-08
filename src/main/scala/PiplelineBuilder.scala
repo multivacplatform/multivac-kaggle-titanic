@@ -17,7 +17,7 @@ object PiplelineBuilder {
                       assembler: VectorAssembler,
                       labelConverter: IndexToString,
                       stringIndexers: Seq[StringIndexerModel],
-                      loadedConfigs: ParamGridBuilder.ParamGridParameters
+                      loadedConfigs: ParamGridParameters.ParamGridParameters
                     ): (Pipeline, Array[ParamMap], CrossValidator) ={
 
 
@@ -69,15 +69,11 @@ object PiplelineBuilder {
     println(s"Finished CrossValidating RandomForestClassifier. Summary:")
     println(s"Training time (sec)\t$elapsed")
 
-
-
     val avgMetricsParamGrid = crossValidatorModelForest.avgMetrics
     val combined = paramGridForest.zip(avgMetricsParamGrid)
     val cvBestModel = crossValidatorModelForest.bestModel.asInstanceOf[PipelineModel]
     combined.sortBy(_._2).foreach(println)
     // Explain params for each stage
-
-
   }
 
 }

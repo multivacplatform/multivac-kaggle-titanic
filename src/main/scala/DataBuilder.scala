@@ -1,14 +1,23 @@
-import org.apache.spark.sql.{DataFrame, SparkSession, Row}
-import org.apache.spark.sql.functions.{udf}
+import com.typesafe.config.ConfigFactory
+import org.apache.spark.sql.{DataFrame, Row, SparkSession}
+import org.apache.spark.sql.functions.udf
 import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructType}
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.functions._
 
 object DataBuilder {
-  def loadData(spark: SparkSession,
+
+
+
+  def loadData(env: String,
+               spark: SparkSession,
                trainFile: String,
                testFile: String
               ): (DataFrame, DataFrame) = {
+
+    var storagePath = ConfigFactory.load().getString("spark.local.storagePath.value")
+    if(env == "prod")
+      storagePath = ConfigFactory.load().getString("spark.prod.master.value")
 
     val nullable = true
     val schemaArray = Array(
@@ -33,13 +42,13 @@ object DataBuilder {
       .format("csv")
       .option("header", "true")
       .schema(trainSchema)
-      .load(trainFile)
+      .load(storagePath + trainFile)
 
     val testDF = spark.read
       .format("csv")
       .option("header", "true")
       .schema(testSchema)
-      .load(testFile)
+      .load(storagePath + testFile)
 
     (trainDF, testDF)
   }

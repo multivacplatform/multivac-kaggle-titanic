@@ -1,3 +1,6 @@
+import com.typesafe.config.ConfigFactory
+import collection.JavaConverters._
+
 object ParamGridParameters {
   case class ParamGridParameters(
                                   maxIterArray: Array[Int],
@@ -10,18 +13,16 @@ object ParamGridParameters {
                                 )
 
   def loadConfigs(): ParamGridParameters = {
-
+    val config = ConfigFactory.load()
     val paramGridVariables = ParamGridParameters(
-      Array(20, 50), //maxIter
-      Array(300), //numTrees
-      Array(10, 15), //maxBins
-      Array(15, 20), //maxDepth
-      Array("entropy", "gini"), //impurity
-      10, //numFolds
-      "auto" //featureSubsetStrategy
+      config.getIntList("paramGrid.maxIter").asScala.toArray.map{ x => x.toInt },
+      config.getIntList("paramGrid.numTrees").asScala.toArray.map{ x => x.toInt },
+      config.getIntList("paramGrid.maxBins").asScala.toArray.map{ x => x.toInt },
+      config.getIntList("paramGrid.maxDepth").asScala.toArray.map{ x => x.toInt },
+      config.getIntList("paramGrid.impurity").asScala.toArray.map{ x => x.toString },
+      config.getInt("paramGrid.numFolds"),
+      config.getString("paramGrid.featureSubsetStrategy")
     )
     paramGridVariables
   }
-
-
 }

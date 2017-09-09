@@ -4,15 +4,20 @@ import org.apache.spark.sql.DataFrame
 object FeatureBuilder {
 
   def createVectors(
-                      numericFeatColNames: Seq[String],
-                      categoricalFeatColNames: Seq[String],
-                      labelColName: String,
-                      featColName: String,
-                      idColName: String,
-                      idxdLabelColName: String,
                       dataDFCompleted: DataFrame,
                       predictDFCompleted: DataFrame
-                    ): (StringIndexerModel, VectorAssembler, IndexToString, Seq[StringIndexerModel], DataFrame, DataFrame ) = {
+                    ): (StringIndexerModel, VectorAssembler, IndexToString, Seq[StringIndexerModel], DataFrame, DataFrame, String) = {
+
+
+    val numericFeatColNames = Seq("Age", "SibSp", "Parch", "Fare", "FamilySize")
+    val categoricalFeatColNames = Seq("Pclass", "Sex", "Embarked", "Title")
+
+    val labelColName = "SurvivedString"
+    val featColName = "Features"
+    val idColName = "PassengerId"
+
+    val idxdLabelColName = "SurvivedIndexed"
+
 
     val idxdCategoricalFeatColName = categoricalFeatColNames.map(_ + "Indexed")
     val allFeatColNames = numericFeatColNames ++ categoricalFeatColNames
@@ -39,6 +44,6 @@ object FeatureBuilder {
     val assembler = new VectorAssembler().setInputCols(Array(allIdxdFeatColNames: _*)).setOutputCol(featColName)
     val labelConverter = new IndexToString().setInputCol("prediction").setOutputCol("predictedLabel").setLabels(labelIndexer.labels)
 
-    (labelIndexer, assembler, labelConverter, stringIndexers, dataDFFiltered, predictDFFiltered)
+    (labelIndexer, assembler, labelConverter, stringIndexers, dataDFFiltered, predictDFFiltered, featColName)
   }
 }

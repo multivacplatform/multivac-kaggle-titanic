@@ -19,7 +19,7 @@ object ParamGridParameters {
       config.getIntList("paramGrid.numTrees").asScala.toArray.map{ x => x.toInt },
       config.getIntList("paramGrid.maxBins").asScala.toArray.map{ x => x.toInt },
       config.getIntList("paramGrid.maxDepth").asScala.toArray.map{ x => x.toInt },
-      config.getIntList("paramGrid.impurity").asScala.toArray.map{ x => x.toString },
+      config.getStringList("paramGrid.impurity").asScala.toArray,
       config.getInt("paramGrid.numFolds"),
       config.getString("paramGrid.featureSubsetStrategy")
     )

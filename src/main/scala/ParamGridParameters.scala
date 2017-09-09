@@ -9,7 +9,8 @@ object ParamGridParameters {
                                   maxDepthArr: Array[Int],
                                   impurityArr: Array[String],
                                   numFolds: Int,
-                                  featureSubsetStrategy: String
+                                  featureSubsetStrategy: String,
+                                  randomSplit: Array[Double]
                                 )
 
   def loadConfigs(): ParamGridParameters = {
@@ -21,7 +22,8 @@ object ParamGridParameters {
       config.getIntList("paramGrid.maxDepth").asScala.toArray.map{ x => x.toInt },
       config.getStringList("paramGrid.impurity").asScala.toArray,
       config.getInt("paramGrid.numFolds"),
-      config.getString("paramGrid.featureSubsetStrategy")
+      config.getString("paramGrid.featureSubsetStrategy"),
+      config.getDoubleList("randomSplit").asScala.toArray.map{ x => x.toDouble }
     )
     paramGridVariables
   }

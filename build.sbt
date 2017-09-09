@@ -1,6 +1,6 @@
 name := "multivac-kaggle-titanic"
 
-version := "0.2"
+version := "0.5"
 
 scalaVersion := "2.11.8"
 

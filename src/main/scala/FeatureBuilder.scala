@@ -1,5 +1,5 @@
 import org.apache.spark.ml.feature._
-import org.apache.spark.sql.{DataFrame}
+import org.apache.spark.sql.DataFrame
 
 object FeatureBuilder {
 
@@ -13,6 +13,7 @@ object FeatureBuilder {
                       dataDFCompleted: DataFrame,
                       predictDFCompleted: DataFrame
                     ): (StringIndexerModel, VectorAssembler, IndexToString, Seq[StringIndexerModel], DataFrame, DataFrame ) = {
+
     val idxdCategoricalFeatColName = categoricalFeatColNames.map(_ + "Indexed")
     val allFeatColNames = numericFeatColNames ++ categoricalFeatColNames
     val allIdxdFeatColNames = numericFeatColNames ++ idxdCategoricalFeatColName
@@ -39,6 +40,5 @@ object FeatureBuilder {
     val labelConverter = new IndexToString().setInputCol("prediction").setOutputCol("predictedLabel").setLabels(labelIndexer.labels)
 
     (labelIndexer, assembler, labelConverter, stringIndexers, dataDFFiltered, predictDFFiltered)
-
   }
 }

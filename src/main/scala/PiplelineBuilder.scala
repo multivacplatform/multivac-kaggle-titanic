@@ -11,7 +11,7 @@ import org.apache.spark.sql.{DataFrame, SparkSession}
 object PiplelineBuilder {
   val splitSeed = 12345
 
-  def fitPipeline(
+  def fitSampleTrainingData(
                    spark: SparkSession,
                    env: String,
                    labelIndexer: StringIndexerModel,
@@ -57,6 +57,7 @@ object PiplelineBuilder {
       .setEstimatorParamMaps(paramGridForest)
       .setNumFolds(loadedConfigs.numFolds).setSeed(splitSeed)
 
+
     val Array(training, test) = dataDFFiltered.randomSplit(loadedConfigs.randomSplit, splitSeed)
     training.cache
     test.cache
@@ -68,5 +69,8 @@ object PiplelineBuilder {
     println(s"Training time (sec)\t$elapsed")
 
     (crossValidatorModelForest, paramGridForest)
+  }
+  def fitFullTrainingData(): Unit = {
+
   }
 }

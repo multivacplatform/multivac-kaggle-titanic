@@ -16,13 +16,13 @@ object Main {
         predictDFCompleted
       )
 
-    val (cvModel, paramGrid) = PiplelineBuilder.fitPipeline(
+    val (cvModel, paramGrid) = PiplelineBuilder.fitSampleTrainingData(
       spark, env,
       labelIndexer, assembler, labelConverter, stringIndexers, featColName,
       dataDFFiltered, predictDFFiltered
     )
-
     Evaluator.displayAllModels(cvModel, paramGrid)
+    SaveOutput.saveResult(cvModel, predictDFFiltered, env)
 
   }
 }

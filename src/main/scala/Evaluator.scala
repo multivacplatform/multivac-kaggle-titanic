@@ -15,9 +15,6 @@ object Evaluator {
     combined.sortBy(_._2).foreach(println)
     // Explain params for each stage
   }
-  def displayEvaluations(): Unit ={
-
-  }
 
   def displayRationCorrectness(
                                 crossValidatorModelForest: CrossValidatorModel,

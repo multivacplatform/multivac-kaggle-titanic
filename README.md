@@ -18,6 +18,10 @@ https://www.kaggle.com/c/titanic
 * [Exploring spark.ml with the Titanic Kaggle competition](https://benfradet.github.io/blog/2015/12/16/Exploring-spark.ml-with-the-Titanic-Kaggle-competition)
 * [Titanic: Machine Learning from Disaster (Kaggle)](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/19095846306138/45566022600459/8071950455163429/latest.html)
 
+## Code of Conduct
+
+This, and all github.com/multivacplatform projects, are under the [Multivac Platform Open Source Code of Conduct](https://github.com/multivacplatform/code-of-conduct/blob/master/code-of-conduct.md). Additionally, see the [Typelevel Code of Conduct](http://typelevel.org/conduct) for specific examples of harassing behavior that are not tolerated.
+
 ## Useful Links
 
 * [Building Classification model using Apache Spark](http://vishnuviswanath.com/spark_lr.html)

@@ -27,3 +27,7 @@ This, and all github.com/multivacplatform projects, are under the [Multivac Plat
 * [Building Classification model using Apache Spark](http://vishnuviswanath.com/spark_lr.html)
 * [Revisit Titanic Data using Apache Spark](https://6chaoran.wordpress.com/2016/08/13/__trashed/)
 * [Would You Survive the Titanic? A Guide to Machine Learning in Python](https://blog.socialcops.com/engineering/machine-learning-python/)
+
+## Copyright and License
+
+Code and documentation copyright 2017 [ISCPIF - CNRS](http://iscpif.fr). Code released under [the MIT license](https://github.com/multivacplatform/multivac-kaggle-titanic/blob/master/LICENSE).

@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/multivacplatform/multivac-kaggle-titanic.svg?branch=master)](https://travis-ci.org/multivacplatform/multivac-kaggle-titanic)
+
 # Machine Learning from Disaster (Kaggle)
 This repo is just for learning purposes to anyone who is new to Machine Learning by Apache Spark.
 https://www.kaggle.com/c/titanic

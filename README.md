@@ -1,4 +1,5 @@
-# Machine Learning from Disaster (Kaggle) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/multivacplatform/multivac-kaggle-titanic/blob/master/LICENSE) [![Build Status](https://travis-ci.org/multivacplatform/multivac-kaggle-titanic.svg?branch=master)](https://travis-ci.org/multivacplatform/multivac-kaggle-titanic)
+# Machine Learning from Disaster (Kaggle) 
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/multivacplatform/multivac-kaggle-titanic/blob/master/LICENSE) [![Build Status](https://travis-ci.org/multivacplatform/multivac-kaggle-titanic.svg?branch=master)](https://travis-ci.org/multivacplatform/multivac-kaggle-titanic) [![Multivac Discuss](https://img.shields.io/badge/multivac-discuss-ff69b4.svg)](https://discourse.iscpif.fr/c/multivac) [![Multivac Channel](https://img.shields.io/badge/multivac-chat-ff69b4.svg)](https://chat.iscpif.fr/channel/multivac)
 
 This repo is just for learning purposes to anyone who is new to Machine Learning by Apache Spark.
 https://www.kaggle.com/c/titanic
